@@ -1,0 +1,11 @@
+this is python 2.7 django based project
+this project is a tour and trevel website whick involve login and sign up page and many more things
+These library need to install before run the project,
+these will install via command promt,
+pip install phonenumbers
+pip install pillow
+pip install django-widget-tweaks
+pip install django-star-ratings==0.5.6
+pip install djangorestframework
+pip install session_package
+
