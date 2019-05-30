@@ -1,0 +1,66 @@
+{% extends 'catalog/base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <div class="col-md-8 banner-right">
+        <div class="sap_tabs">
+            <div class="booking-info about-booking-info">
+                <h2>Search Travel</h2>
+            </div>
+            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                <!-- search form -->
+                <form action="{% url 'search_results' %}" class="search-form search-form-inline">
+                    <div class="reservation">
+                        <ul>
+                            <li class="span1_of_1 desti about-desti">
+                                <h5>Source</h5>
+                                <div class="book_date">
+                                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                    <input type="text" class="form-input form-control" id="search" autocorrect="off" id="SearchKeyword" data-test="search-input-input"
+                                        placeholder="From Location" tabindex="1" value="" name="depature-location" required>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reservation">
+                        <ul>
+                            <li class="span1_of_1 desti about-desti">
+                                <h5>Destination</h5>
+                                <div class="book_date">
+                                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                    <input type="text" class="form-input form-control" id="search" autocorrect="off" id="SearchKeyword" data-test="search-input-input"
+                                        placeholder="To Location" tabindex="1" value="" name="arrival-location" required>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reservation">
+                        <ul>
+                            <li class="span1_of_1  ">
+                                <h5>Date</h5>
+                                <div class="book_date">
+                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                    <input type="date" class="form-input form-control" id="search" autocorrect="off" id="SearchKeyword" data-test="search-input-input"
+                                        placeholder="mm/dd/yy" tabindex="1" value="" name="travel-date" required>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reservation">
+                        <ul>
+                            <li class="span1_of_3">
+                                <div class="date_btn">
+                                    <button class="btn btn-success route-button">Search</button>
+                                </div>
+                            </li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+
+                </form>
+                <!-- search form end -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

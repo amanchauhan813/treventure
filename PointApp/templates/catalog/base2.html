@@ -1,0 +1,561 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>Tour snap a Travel Category Bootstrap Responsive Web Template | Home :: Aman Rajput</title>
+
+	<!--meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+	</script>
+	<!--//meta tags ends here-->
+
+	<!--booststrap-->
+	
+	<link href="{% static 'catalog/css1/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+	<!--//booststrap end-->
+	<!-- font-awesome icons -->
+	<link href="{% static 'catalog/css1/font-awesome.css' %}" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<!-- gallery-Swipe-box -->
+<link rel="stylesheet" href="{% static 'catalog/css1/swipebox.css' %}">
+<!-- //gallery-Swipe-box -->
+    <!-- flexSlider -->
+	<link rel="stylesheet" href="{% static 'catalog/css1/flexslider.css' %}" type="text/css" media="screen" property="" />
+	<!-- //flexSlider -->
+	<!--stylesheets-->
+	<link href="{% static 'catalog/css1/style.css' %}" rel='stylesheet' type='text/css' media="all">
+	<!--//stylesheets-->
+	<link href="//fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="banner" id="home" style="background: url({% static 'catalog/img1/banner.jpg' %})no-repeat center;
+    ">
+
+<div class="header-w3layouts"> 
+		<!-- Navigation -->
+	
+		<div class="container">
+		<div class="header-bar"> 
+	<nav class="navbar navbar-default">
+			<div class="navbar-header navbar-left">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<h1><a class="navbar-brand" href="#">Treventure</a></h1>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+				<nav>
+					<ul class="nav navbar-nav">
+					{% if user.is_authenticated %}
+						<li><a href="/searchhotel/">Search Hotels</a></li>
+						<li><a href="/searchtraval/">Search Travel</a></li>	
+						<li><a href="/allbus/">Book Bus</a></li>	
+					{% else %}		
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="#about" class="scroll">About</a></li>
+						<li><a href="#services" class="scroll">Services</a></li>
+						<li><a href="#gallery" class="scroll">Gallery</a></li>
+						<li><a href="/signup/">Sign UP</a></li>
+						{% endif %}
+                        			
+			</ul>
+				</nav>
+          
+	</div>
+		</nav> 
+	</div>
+
+	<div class="clearfix"> </div>
+
+	</div>
+	
+	</div>
+<div class="container">
+
+		<!--Slider-->
+		<div class="slider">
+			<div class="callbacks_container w3l">
+				<ul class="rslides" id="slider">
+					<li>
+					
+						<div class="slider-info">
+							<h4>PLAN YOUR TRIP NOW!!</h4>
+						    <p>Be Ready To Explore Newthings</p>
+							
+						</div>
+					</li>
+					<li>
+						
+						<div class="slider-info">
+							<h4>PLAN YOUR DREAM PLACE!!</h4>
+							<p>Be Ready To Explore Newthings</p>
+						</div>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="clearfix"></div>
+			
+</div>
+
+	</div>
+	</div>
+<!--//banner-->
+<div class="w3-about-us" id="about">
+	<div class="container">
+		<div class="w3-headings-all">
+			<h3>Pack your bags. We’re going on vacation!</h3>
+		</div>
+		<div class="w3-about-text">
+		<p>Travel with us and see the places that you have only imagine.</p>
+		</div>
+		<div class="w3-about-all-grid">
+		<div class="col-md-6 w3-about-grid-left">
+		<ul>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Explore Things</h3></li>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Attraction Tickets</h3></li>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Transportation</h3></li>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Attraction Clubs</h3></li>
+		</ul>
+		</div>
+		<div class="col-md-6 w3-about-grid-right">
+		<ul>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Museum Tickets</h3></li>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Expensive less</h3></li>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Sightseeing</h3></li>
+			<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Outdoor Trips</h3></li>
+		</ul>
+		</div>
+		<div class="clearfix"></div>
+		
+	</div>
+</div>
+</div>
+<!-- what -->
+	<div class="what-w3ls" id="services">
+		<div class="container">
+			<div class="w3-headings-all">
+			<h3>Our Services</h3>
+		</div>
+			<p class="w3agile">We provide discount on services for family trip, during the trip we provide fun activities like games, movies, music and more   .</p>
+				<div class="what-grids">
+					<div class="col-md-6 what-grid">
+					
+						<img src="{% static 'catalog/img1/ab1.jpg' %}" class="img-responsive" alt=""/>
+					</div>
+					<div class="col-md-6 what-grid1">
+						<div class="what-top">
+							<div class="what-left">
+								<i class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></i>
+							</div>
+							<div class="what-right">
+								<h4>Hotel booking</h4>
+								<p>We provide best quality rooms with low cost.</p>
+							</div>
+								<div class="clearfix"></div>
+						</div>
+						<div class="what-top1">
+							<div class="what-left">
+								<i class="glyphicon glyphicon-flash" aria-hidden="true"></i>
+							</div>
+							<div class="what-right">
+								<h4>Bus booking</h4>
+								<p>PointHub is India's leading player for Bus bookings. With the cheapest fare guarantee, experience great value at the lowest price. Instant notifications ensure current bus schedule, instant fare drops, amazing discounts, instant refunds and rebook options, price, Operator reviews and many more interesting features.</p>
+							</div>
+								<div class="clearfix"></div>
+						</div>
+						<div class="what-top1">
+							<div class="what-left">
+								<i class="glyphicon glyphicon-fire" aria-hidden="true"></i>
+							</div>
+							<div class="what-right">
+								<h4>Travel booking</h4>
+								<p>Planning a vacation or business trip, and haven't found a hotel yet? Then use our web portal to find a hotel, which suits you in every way. The best travel site in India, PointHub has the largest database of hotels in the country and outside. Our user-friendly website makes online hotel booking an easy task, which can be completed in mere minutes.</p>
+							</div>
+								<div class="clearfix"></div>
+						</div>
+					</div>
+						<div class="clearfix"></div>
+				</div>
+				<div class="about-info-grids">
+				<div class="col-md-4 col-sm-4 about-info about-info1">
+					<i class="fa fa-info-circle agile-sicon" aria-hidden="true"></i>
+					<h4>how we<span class="head-w3l"> work</span></h4>
+					<div class="h4-underline"></div>
+					<p>You register and pay to us for your traveling it all save in our database then we book your seat and room.</p>
+					</div>
+				<div class="col-md-4 col-sm-4 about-info about-info2">
+					<i class="fa fa-question-circle agile-sicon" aria-hidden="true"></i>
+					<h4>what we <span class="head-w3l"> do</span></h4>
+					<div class="h4-underline"></div>
+					<p>we give you whole new experience of traveling.</p>
+					</div>
+				<div class="col-md-4 col-sm-4 about-info about-info3">
+					<i class="fa fa-registered agile-sicon" aria-hidden="true"></i>
+					<h4>why choose<span class="head-w3l"> us</span></h4>
+					<div class="h4-underline"></div>
+					<p>Cause We give bestest facilities to our customers with best result.</p>
+					</div>
+					<div class="clearfix"></div>
+		</div>
+	</div>
+	</div>
+<!-- //what -->	
+	<!-- pricing -->
+	<div class="pricing-agile" id="pricing-agile" style="background: url({% static 'catalog/img1/c1.jpg' %}) no-repeat fixed;
+    ">
+		<div class="container">
+			<div class="w3-headings-all w3-services-head">
+				<h3>Our Pricings</h3>
+			</div>
+
+			<div class="pricing-agile-grids">
+				<div class="col-xs-4 grid-info">
+					<h3>FAMILY PACK</h3>
+					<h4>$59.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>Delhi</p>
+						<p>Mumbai</p>
+						<p>Bangalore</p>
+						<p>Himachal</p>
+					</div>
+					<a href="login.html" class="scroll">Login</a>
+				</div>
+				<div class="col-xs-4 grid-info grid-two">
+					<h3>PREMIUM</h3>
+					<h4>$66.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>Delhi</p>
+						<p>Mumbai</p>
+						<p>Bangalore</p>
+						<p>Himachal</p>
+					</div>
+					<a href="#regi" class="scroll">Login</a>
+				</div>
+				<div class="col-xs-4 grid-info grid-three">
+					<h3>LUXURY</h3>
+					<h4>$89.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>Delhi</p>
+						<p>Mumbai</p>
+						<p>Bangalore</p>
+						<p>Himachal</p>
+					</div>
+					<a href="#regi" class="scroll">Login</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //pricing table -->
+
+<!--Gallery -->
+<div class="gallery" id="gallery">
+	<div class="container">
+	<div class="w3-headings-all">
+		<h3>Our Gallery</h3>
+		</div>
+		<div class="agileinfo_work_grids">
+				<div class="col-md-4 w3_agile_work_grid gallery1">
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g1.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g1.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g2.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g2.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="images/g3.jpg" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g3.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3_agile_work_grid">
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g4.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g4.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g5.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g5.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g6.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g6.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3_agile_work_grid">
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g7.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g7.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g8.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g8.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="{% static 'catalog/img1/g9.jpg' %}" class="b-link-stripe b-animate-go  swipebox" title="Tour_snap">
+							<div class="agile_work_grid w3_agileits_sub_work">
+							<img src="{% static 'catalog/img1/g9.jpg' %}" alt=" " class="img-responsive" />
+							<div class="agileits_w3layouts_work">
+								Tour snap
+							</div>
+							</div>
+						</a>
+					</div>
+/				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>	
+
+<!-- //Gallery -->
+<!-- testimonials -->
+	<div class="testimonials" id="testimonials">
+		<div class="container">
+		<div class="w3-headings-all">
+			<h3>Our Customer says</h3>
+		</div>
+			<div class="w3_testimonials_grids">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>	
+								<div class="w3_testimonials_grid">
+									<img src="{% static 'catalog/img1/zzz.png' %}" alt=" " class="img-responsive" />
+									<h4><i>This is the best traveling company.it gives very good facilities to customers.i personally experience those services. </i></h4>
+									<h5>Rathour </h5>
+									<p>Customer</p>
+								</div>
+							</li>
+							<li>	
+								<div class="w3_testimonials_grid">
+									<img src="{% static 'catalog/img1/test2.jpg' %}" alt=" " class="img-responsive" />
+									<h4><i>pointHub is the best company it gives lots of facalities to thier customers i love their services a lot.</i></h4>
+									<h5>Elina Max</h5>
+									<p>Customer</p>
+								</div>
+							</li>
+							<li>	
+								<div class="w3_testimonials_grid">
+									<img src="{% static 'catalog/img1/test3.jpg' %}" alt=" " class="img-responsive" />
+									<h4><i>with my experience this is the best company for traveling.</i></h4>
+									<h5>Robert </h5>
+									<p>Customer</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</div>
+<!-- //testimonials -->
+
+<!-- footer -->
+<div class="footer-agile">
+	<div class="container">
+		<div class="col-md-8 footer-nav">
+			<ul>
+				<li><a href="#home" class="scroll">Home</a></li>
+				<li><a href="#about" class="scroll">About</a></li>
+				<li><a href="#services" class="scroll">Services</a></li>
+				<li><a href="#team" class="scroll">Team</a></li>
+				<li><a href="#gallery" class="scroll">Gallery</a></li>
+				<li><a href="#contact" class="scroll">Contact</a></li>
+			</ul>
+		</div>
+		<div class="col-md-4 social">
+			<ul>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+			</ul>
+		</div>
+		 <div class="clearfix"> </div>
+		 <div class="w3-footer-bottom">
+		 <div class="col-md-4 mail-agileits-w3layouts">
+								<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Phone</p><span>+91 9034748264</span>
+								</div>
+							</div>
+							<div class="col-md-4 mail-agileits-w3layouts">
+								<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Email</p><a href="mailto:info@example.com">amanchauhan813@gmail.com</a>
+								</div>
+							</div>
+							<div class="col-md-4 mail-agileits-w3layouts">
+								<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
+								<div class="contact-right">
+									<p>Address</p><span>813 Kurkshetra,India</span>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+
+	</div>
+</div>
+<!-- //footer -->
+
+<!-- //footer -->
+<div class="copy-right-grids">
+				<div class="container">
+					<div class="copy-left">
+						<p class="footer-gd">© 2018 Tour & Travel . All Rights Reserved | Design by <a href="https://www.facebook.com/amanrajput813" target="_blank">Aman Rajput</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+
+
+	<!--js working-->
+	<script type='text/javascript' src="{% static 'catalog/js1/jquery-2.2.3.min.js' %}"></script>
+	<script src="{% static 'catalog/js1/bootstrap.js' %}"></script>
+	<!-- //js  working-->
+		<!-- banner-->
+<script src="{% static 'catalog/js1/responsiveslides.min.js' %}"></script>
+		<script>
+				$(function () {
+					$("#slider").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: true,
+						speed: 1000,
+						namespace: "callbacks",
+						before: function () {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+						}
+					});
+				});
+			</script>
+<!--// banner-->
+					<script defer src="{% static 'catalog/js1/jquery.flexslider.js' %}"></script>
+					<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+				<!-- //flexSlider -->
+<!-- script-for-swipebox -->
+	<script src="{% static 'catalog/js1/jquery.swipebox.min.js' %}"></script> 
+	<script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+<!-- //script-for-swipebox -->
+
+<!-- start-smoth-scrolling -->
+				<script type="text/javascript" src="{% static 'catalog/js1/move-top.js' %}"></script>
+				<script type="text/javascript" src="{% static 'catalog/js1/easing.js' %}"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>
+		<!-- start-smoth-scrolling -->
+		<!-- smooth scrolling-bottom-to-top -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear' 
+						};
+					*/								
+					$().UItoTop({ easingType: 'easeOutQuart' });
+					});
+				</script>
+				<a href="#" id="toTop" style="display: block; background: url({% static 'catalog/img1/arr.png' %}) no-repeat 0px 0px;
+     " > <span id="toTopHover" style="opacity: 1;"> </span></a>
+				<script src="{% static 'catalog/js1/SmoothScroll.min.js' %}"></script>
+
+		<!-- //smooth scrolling-bottom-to-top -->
+
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Treventure :: Home Page  ::</title>
+
+<!-- Custom Theme files -->
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<link href="{%static 'catalog/css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+<link href="{%static 'catalog/css/style.css' %}" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="{%static 'catalog/css/flexslider.css' %}" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="{%static 'catalog/css/JFFormStyle-1.css' %}" />
+<!-- js -->
+<script src="{%static 'catalog/js/jquery.min.js' %}"></script>
+<script src="{%static 'catalog/js/modernizr.custom.js' %}"></script>
+<!-- //js -->
+<!-- fonts -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- //fonts -->	
+<script type="text/javascript">
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true   // 100% fit in a container
+			});
+		});
+	</script>
+<!--pop-up-->
+<script src="{%static 'catalog/js/menu_jquery.js' %}"></script>
+<style>
+		.flex{
+			height: 75vh;
+			display:-webkit-flex ;
+			display:flex ;
+		}
+		.flex-item{
+			margin:auto ;
+		}
+		.vertical-center {
+		  min-height: 100%;
+		  min-height: 100vh;
+		  display: -webkit-box;
+		  display: -moz-box;
+		  display: -ms-flexbox;
+		  display: -webkit-flex;
+		  display: flex; 
+		  
+			-webkit-box-align : center;
+		  -webkit-align-items : center;
+			   -moz-box-align : center;
+			   -ms-flex-align : center;
+				  align-items : center;
+		  
+		  width: 100%;
+		  
+				 -webkit-box-pack : center;
+					-moz-box-pack : center;
+					-ms-flex-pack : center;
+		  -webkit-justify-content : center;
+				  justify-content : center;
+		}
+		</style>
+<!--//pop-up-->	
+</head
+<body>
+	<!--header-->
+	<div class="header">
+		<div class="container">
+			<div class="header-grids">
+				<div class="logo">
+					<h1><a  href="index.html"><span>Treven</span> ture</a></h1>
+				</div>
+				<!--navbar-header-->
+				<div class="header-dropdown">
+					<div class="emergency-grid">
+						<ul>
+							<li>Toll Free : </li>
+							<li class="call">+91 9034748264</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="nav-top">
+				<div class="top-nav">
+					<span class="menu"><img src="{%static 'catalog/img/menu.png' %}" alt="" /></span>
+					<ul class="nav1">
+						{% if user.is_authenticated %}
+						<li><a href="/searchhotel/">Search Hotels</a></li>
+						<li><a href="/searchtraval/">Search Travel</a></li>	
+						<li><a href="/allbus/">Book Bus</a></li>	
+						{% else %}	
+						<li><a href="/signup/">Sign UP</a></li>
+						{% endif %}
+					</ul>
+					<div class="clearfix"> </div>
+					
+				</div>
+
+<div class="dropdown-grids">
+						<div id="loginContainer">{% if user.is_authenticated %}
+                                Hi {{ user.username }}!
+                                <a href="/logout/"><span>Logout</span></a></p>
+                              {% else %}
+                                <a href="/login/"><span>Login</span></a>
+                              {% endif %}
+							
+						</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//header-->
+	
+	
+	<!--//header-->
+	<!-- banner-bottom -->
+	<div class="banner-bottom">
+		<!-- container -->
+		<div class="container">
+                {% block content %}
+                {% endblock %}   
+		</div>
+		<!-- //container -->
+	</div>
+	<!-- //banner-bottom -->
+	<style>
+	/*-- pricing-agile table --*/
+.pricing-agile {
+    background: url(../images/c1.jpg) no-repeat fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+	    min-height: 550px;
+}
+.pricing-agile-grids {
+    text-align: center;
+    -webkit-box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);
+    padding: 3em 0;
+    border-radius: 7px;
+    background: #fff;
+}
+.pricing-agile h3.tittle-w3l{
+    color:#fff;
+}
+.pricing-agile h3.tittle-w3l:after {
+    background-color: rgba(255, 255, 255, 0.61);
+}
+.grid-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 16px;
+    color: #16C3B0;
+}
+.grid-info h4 {
+    font-size: 2.5em;
+    color: #000;
+}
+.grid-info h4 sup {
+ vertical-align: sub;
+    font-size: 0.8em;
+    color: #ee4f4f;
+}
+.grid-info h6 {
+    font-size: 0.9em;
+    color: #b9b9b9;
+    line-height: 1.8em;
+}
+.pricing-agile-text {
+    padding: 2em;
+}
+.grid-info p {
+    font-size: .9em;
+    color: #999999;
+    margin-bottom: 15px;
+}
+.grid-info span {
+    color: #2e2e2e;
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-right: 6px;
+}
+.grid-info a {
+    padding: 10px 20px;
+    font-size: .9em;
+    color: #FFF;
+    background-color: #16C3B0;
+}
+.grid-info a:hover{
+    background: #f53275;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+.grid-info.grid-two h3 {
+    color:#FF4A52;
+}
+.grid-info.grid-two a {
+    background-color: #FD4D40;
+}
+.grid-info.grid-two a:hover {
+    background-color: #168eea;
+}
+.grid-info.grid-two {
+    border-left: 1px solid rgba(125, 123, 123, 0.32);
+    border-right: 1px solid rgba(125, 123, 123, 0.32);
+}
+/*-- //pricing-agile table --*/
+
+	</style>
+	<!-- pricing -->
+	<div class="pricing-agile" id="pricing-agile" style="background: url({% static 'catalog/img1/c1.jpg' %}) no-repeat fixed;
+    ">
+		<div class="container">
+	<br><br><br>
+			<div class="pricing-agile-grids">
+				<div class="col-xs-4 grid-info">
+					<h3>FAMILY PACK</h3>
+					<h4>$59.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>routine blood investigations</p>
+						<p>semen analysis</p>
+						<p>Hsg</p>
+						<p>Laproscopy</p>
+					</div>
+					<a href="#regi" class="scroll">Choose Plan</a>
+				</div>
+				<div class="col-xs-4 grid-info grid-two">
+					<h3>PREMIUM</h3>
+					<h4>$66.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>routine blood investigations</p>
+						<p>semen analysis</p>
+						<p>follicular study</p>
+						<p>Laproscopy</p>
+					</div>
+					<a href="#regi" class="scroll">Choose Plan</a>
+				</div>
+				<div class="col-xs-4 grid-info grid-three">
+					<h3>LUXURY</h3>
+					<h4>$89.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>routine blood investigations</p>
+						<p>semen analysis</p>
+						<p>Hormone analysis</p>
+						<p>Laproscopy</p>
+					</div>
+					<a href="#regi" class="scroll">Choose Plan</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //pricing table -->
+
+<!-- //footer -->
+<div class="copy-right-grids">
+				<div class="container">
+					<div class="copy-left">
+						<p class="footer-gd">© 2018 Tour & Travel . All Rights Reserved | Design by <a href="https://facebook.com/amanchauhan813/" target="_blank">Aman Rajput</a></p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+
+
+	<!--js working-->
+	<script type='text/javascript' src="{% static 'catalog/js1/jquery-2.2.3.min.js' %}"></script>
+	<script src="{% static 'catalog/js1/bootstrap.js' %}"></script>
+	<!-- //js  working-->
+		<!-- banner-->
+<script src="{% static 'catalog/js1/responsiveslides.min.js' %}"></script>
+		<script>
+				$(function () {
+					$("#slider").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: true,
+						speed: 1000,
+						namespace: "callbacks",
+						before: function () {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+							$('.events').append("<li>after event fired.</li>");
+						}
+					});
+				});
+			</script>
+<!--// banner-->
+					<script defer src="{% static 'catalog/js1/jquery.flexslider.js' %}"></script>
+					<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+				<!-- //flexSlider -->
+<!-- script-for-swipebox -->
+	<script src="{% static 'catalog/js1/jquery.swipebox.min.js' %}"></script> 
+	<script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+<!-- //script-for-swipebox -->
+
+<!-- start-smoth-scrolling -->
+				<script type="text/javascript" src="{% static 'catalog/js1/move-top.js' %}"></script>
+				<script type="text/javascript" src="{% static 'catalog/js1/easing.js' %}"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>
+		<!-- start-smoth-scrolling -->
+		<!-- smooth scrolling-bottom-to-top -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+					/*
+						var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear' 
+						};
+					*/								
+					$().UItoTop({ easingType: 'easeOutQuart' });
+					});
+				</script>
+				<a href="#" id="toTop" style="display: block; background: url({% static 'catalog/img1/arr.png' %}) no-repeat 0px 0px;
+     " > <span id="toTopHover" style="opacity: 1;"> </span></a>
+				<script src="{% static 'catalog/js1/SmoothScroll.min.js' %}"></script>
+
+		<!-- //smooth scrolling-bottom-to-top -->
+
+</body>
+
+</html>

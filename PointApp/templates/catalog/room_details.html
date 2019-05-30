@@ -1,0 +1,94 @@
+{% extends 'catalog/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container">
+    <div class="row bus-details">
+        <div class="details-overlay">
+          <div class="container">
+              <div class="route" style="margin-bottom: 10px;">
+                  <div class="text-xl">
+                      <h3>{{selected_room.hotels.name}} | {{selected_room.hotels.location}}</h3>
+                  </div>
+                  <div class="text-xl">
+                      <h3>{{check_in_date}}
+                          <span>
+                              <i class="glyphicon glyphicon-arrow-right"></i>
+                          </span>
+                          <span>{{check_out_date}}
+                      </h3>
+                  </div>
+              </div>
+          </div>
+        </div>  
+    </div>
+              
+    <div class="container detail-panels">
+      <div class="col-md-8 col-lg-8">
+        <div class="panel panel-default bus-details-panel">
+          <div class="panel-heading">
+            <h3>Room Details</h3>
+          </div>
+          <div class="panel-body">
+            <h4>Room name: {{selected_room.name }}</h4>
+            <h4>Capacity: {{selected_room.capacity}}</h4>
+            <h4>Price: Rs. {{selected_room.price}}</h4>    
+          </div>
+        </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3>Guest Detail</h3>
+        </div>
+        <div class="panel-body">
+    
+          <form action="" method="post" enctype="multipart/form-data" class="passenger-form">
+            {% csrf_token %}
+          
+    
+            {% for hidden_field in form.hidden_fields %}
+              {{ hidden_field }}
+            {% endfor %}
+    
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger" role="alert">
+                {% for error in form.non_field_errors %}
+                  {{ error }}
+                {% endfor %}
+              </div>
+            {% endif %}
+    
+            {% for field in form.visible_fields %}
+              <div class="form-group">
+                {{ field.label_tag }}
+    
+                {% if form.is_bound %}
+                  {% if field.errors %}
+                    {% render_field field class="form-control is-invalid" %}
+                    {% for error in field.errors %}
+                      <div class="invalid-feedback">
+                        {{ error }}
+                      </div>
+                    {% endfor %}
+                  {% else %}
+                    {% render_field field class="form-control is-valid" %}
+                  {% endif %}
+                {% else %}
+                  {% render_field field class="form-control" %}
+                {% endif %}
+    
+                {% if field.help_text %}
+                  <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+              </div>
+            {% endfor %}
+    
+            <button type="submit" class="btn btn-warning">Confirm and Book</button>
+            </form>
+    
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

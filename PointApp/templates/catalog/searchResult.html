@@ -1,0 +1,166 @@
+{% extends 'catalog/base.html' %} {% load static %} {% load ratings %} {% block content %}
+<div class="container content">
+
+    <div class="row route-update">
+        <div class="update-overlay">
+            <div class="container">
+
+                <div class="container">
+                    <div class="route" style="margin-bottom: 20px;">
+                        <div class="text-xl">
+                            <h3>{{search_departure_location}}</h3>
+                        </div>
+                        <div class="text-xl">
+                            <h3>{{convert_to_check_in_date}}
+                                <span>
+                                    <i class="glyphicon glyphicon-arrow-right"></i>
+                                </span>
+                                <span>{{convert_to_check_out_date}}
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- search form -->
+                    <div class="container">
+                        <div class="col-md-8 banner-right">
+                            <div class="sap_tabs">
+                                <div class="booking-info about-booking-info">
+                                    <h2>Search Hotels</h2>
+                                </div>
+                                <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                                    <!-- search form -->
+                                    <form action="{% url 'search_hotel_results' %}" class="search-form search-form-inline">
+                                        <div class="reservation">
+                                            <ul>
+                                                <li class="span1_of_1 desti about-desti">
+                                                    <h5>Destination</h5>
+                                                    <div class="book_date">
+                                                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                                                        <input type="text" class="form-input form-control" id="search" autocorrect="off" id="SearchKeyword" data-test="search-input-input"
+                                                            placeholder="Hotel Location" tabindex="1" value="" name="depature-location"
+                                                            required>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="reservation">
+                                            <ul>
+                                                <li class="span1_of_1  ">
+                                                    <h5>Check-In</h5>
+                                                    <div class="book_date">
+                                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                                        <input type="date" class="form-input form-control" id="search" autocorrect="off" id="SearchKeyword" data-test="search-input-input"
+                                                            placeholder="mm/dd/yy" tabindex="1" value="" name="check-in-date"
+                                                            required>
+                                                    </div>
+
+                                                </li>
+                                                <li class="span1_of_1  left">
+                                                    <h5>Check-Out</h5>
+                                                    <div class="book_date">
+                                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                                        <input type="date" class="form-input form-control" id="search" autocorrect="off" id="SearchKeyword" data-test="search-input-input"
+                                                            placeholder="mm/dd/yy" tabindex="1" value="" name="check-out-date"
+                                                            required>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="reservation">
+                                            <ul>
+                                                <li class="span1_of_3">
+                                                    <div class="date_btn">
+                                                        <button class="btn btn-success route-button">Search</button>
+                                                    </div>
+                                                </li>
+                                                <div class="clearfix"></div>
+                                            </ul>
+                                        </div>
+
+                                    </form>
+                                    <!-- search form end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- search form end -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container results-page">
+
+    <div class="row results">
+
+        <div class="container">
+
+            {% if avaialbleRoom %}
+
+            <h2> {{avaialbleRoom|length}} Hotel Room found </h2>
+
+            {% endif %} {% if no_scheduled_bus_message %}
+
+            <h2>{{no_scheduled_bus_message}}</h2>
+
+            {% endif %} {% if no_route_message %}
+
+            <h2>{{no_route_message}}</h2>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+{% if avaialbleRoom %}
+
+<div class="container scheduleBar">
+    <div class="row">
+        <div class="container">
+
+            <ul class="cat">
+                <li class="bus-companies">Hotel</li>
+
+                <li class="departure">Name</li>
+
+                <li class="seats">capacity</li>
+
+                <li class="price">Price</li>
+            </ul>
+
+
+            {% for room in avaialbleRoom %}
+
+            <ul class="res">
+                <li>{{room.hotels.name}}</li>
+                <li>{{room.name}}</li>
+                <li>{{room.capacity}}</li>
+                <li>Rs. {{room.price}}</li>
+
+                {% if result_booking.room.id == room.id %}
+                    <li>
+                       <b>Already Booked</b>
+                     </li>
+                {% else %}
+                     <li>
+                        <a href="{% url 'room_details' room.id convert_to_check_in_date convert_to_check_out_date %}">
+                             <button class="btn btn-success search-button">Select</button>
+                         </a>
+                     </li>
+                
+                {% endif %}
+
+            </ul>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+</div>
+{% endif %} {% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'catalog/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+{% if ticket %}
+
+<div class="container scheduleBar">
+    <div class="row">
+        <div class="container">
+
+                <div class="panel panel-default bus-details-panel">
+                        <div class="panel-heading">
+                          <h3>Ticket Details</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h4>Ticket Code</h4> <h5>{{ticket.ticket_number}}</h5> 
+                           <h4>Name</h4> <h5>{{ticket.first_name}} {{ticket.last_name}}</h5> 
+                           <h4>Phone Number</h4> <h5>{{ticket.phone_number}}</h5> 
+                           <h4>email</h4> <h5>{{ticket.email}}</h5> 
+                          <h4>Departure Time</h4> <h5>{{ticket.schedule.departure_time | date:"N j, o"}}</h5>
+                          <h4>Operator</h4> <h5>{{ticket.schedule.bus.bus_organisation.name}}</h5>
+                          <h4>Price</h4> <h5>{{ticket.schedule.price}}</h5>    
+                        </div>
+                      </div>    
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+{% endif %}
+    {% endblock %}

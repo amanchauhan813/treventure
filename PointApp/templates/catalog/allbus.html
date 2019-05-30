@@ -1,0 +1,49 @@
+{% extends 'catalog/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+
+{% if buses %}
+
+<div class="container scheduleBar">
+    <div class="row">
+        <div class="container">
+
+            <ul class="cat">
+                <li class="bus-companies">Bus Companies</li>
+
+                <li class="departure">Departure</li>
+
+                <li class="duration">Route</li>
+
+                <li class="seats hidden-xs hidden-sm">Seats</li>
+
+                <li class="price">Price</li>
+            </ul>
+            <ul class="res">
+
+                    {% for bus in buses %}
+    
+                    <li>{{bus.bus.bus_organisation}}</li>
+                    <li>{{bus.departure_time | date:"g:i A"}}</li>
+                    <li>{{bus.bus.route}}  </li>                    
+                    <li>{{bus.bus.capacity}}</li>
+                    <li>Rs. {{bus.price}}</li>
+                    <li>
+                        <a href="{%url 'bus_details' bus.id%}">
+                            <button class="btn btn-success search-button">Select</button>
+                        </a>
+                    </li>
+    
+                    {% endfor %} 
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+{% else %}
+    <div><h2>No Bus Available.</h2></div>
+{% endif %}
+    {% endblock %}
